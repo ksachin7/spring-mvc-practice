@@ -3,35 +3,41 @@
 **Project Structure**:
 
 ```
-spring-mvc-xml/
-│
-├── pom.xml                    # Maven project configuration file
-├── readme.md                  # README file with project documentation
-├── src/
-│   └── main/
-│       ├── java/
-│       │   └── com/
-│       │       └── example/
-│       │           ├── controller/              
-│       │           │   └── HomeController.java  # Controller handling requests
-│       │           ├── model/                   
-│       │           │   └── User.java            # POJO class representing a User
-│       │           ├── repository/              
-│       │           │   └── UserRepository.java  # Interface for user data access
-│       │           └── service/                 
-│       │               └── UserService.java     # Service class for business logic
-│       ├── resources/
-│       │   ├── logback.xml         # Configuration for logging
-│       │   ├── static/             # Static resources like CSS, JS, images
-│       │   │   └── index.html      
-│       │   └── templates/          # Template files for server-side rendering
-│       └── webapp/
-│           ├── WEB-INF/
-│           │   ├── dispatcher-servlet.xml  # Spring MVC configuration file
-│           │   ├── views/                  # Directory for JSP view files
-│           │   │   └── home.jsp    
-│           │   └── web.xml                 # Deployment descriptor for the web application
-│           └── index.jsp                   # Default landing page of the application
+spring-mvc-xml
+.
+├── pom.xml                           # Project Object Model file for Maven configuration
+├── readme.md                         # Project documentation file
+├── src
+│     └── main
+│         ├── java
+│         │     └── com
+│         │         └── example
+│         │             ├── controller
+│         │             │     └── HomeController.java   # Controller class handling HTTP requests
+│         │             ├── model
+│         │             │     └── User.java             # Entity class representing a user
+│         │             ├── repository
+│         │             │     └── UserRepository.java   # Interface for CRUD operations on User entities
+│         │             └── service
+│         │                 └── UserService.java        # Service class containing business logic
+│         ├── resources
+│         │     ├── logback.xml         # Configuration file for logging framework
+│         │     ├── static
+│         │     │     └── index.html    # Static HTML file
+│         │     └── templates           # Folder for Thymeleaf templates or other view templates
+│         └── webapp
+│             ├── WEB-INF
+│             │     ├── dispatcher-servlet.xml          # Spring MVC configuration file
+│             │     ├── lib
+│             │     │     ├── jakarta.servlet.jsp.jstl-api-3.0.0         # JSTL API for JSP support
+│             │     │     └── jakarta.servlet.jsp.jstl-api-3.0.0.jar     # JSTL API jar file
+│             │     ├── views
+│             │     │     ├── practice.jsp              # JSP view for practice page
+│             │     │     ├── signup.jsp                # JSP view for signup page
+│             │     │     └── spinner.jsp               # JSP view for loading spinner
+│             │     └── web.xml                         # Deployment descriptor for the web application
+│             ├── breadcrumb.jsp       # JSP fragment for breadcrumb navigation
+│             └── index.jsp            # Main JSP view for the index page
 └── target/
     ├── classes/                    # Compiled Java classes
     │   .
@@ -171,7 +177,7 @@ another build tool like Gradle, the dependencies will be similar, but the syntax
 4. **JSP View**:
 
    ```html
-   <!-- src/main/webapp/WEB-INF/views/home.jsp -->
+   <!-- src/main/webapp/WEB-INF/views/signup.jsp -->
    <!DOCTYPE html>
    <html>
      <head>
