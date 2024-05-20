@@ -1,25 +1,33 @@
 <!DOCTYPE web-app PUBLIC
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
-
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+  <display-name>Archetype Created Web Application</display-name> <!-- Display name for the web application -->
+
+  <!-- Servlet Configuration -->
   <servlet>
-    <servlet-name>dispatcher</servlet-name>
-    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <servlet-name>dispatcher</servlet-name> <!-- Name of the DispatcherServlet -->
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class> <!-- DispatcherServlet class -->
     <init-param>
       <param-name>contextConfigLocation</param-name>
       <param-value>/WEB-INF/dispatcher-servlet.xml</param-value> <!-- Path to your Spring MVC configuration XML -->
     </init-param>
     <init-param>
       <param-name>isELIgnored</param-name>
-      <param-value>false</param-value>
+      <param-value>false</param-value> <!-- Expression Language (EL) Ignored flag -->
     </init-param>
-    <load-on-startup>1</load-on-startup>
+    <load-on-startup>1</load-on-startup> <!-- Load servlet on application startup -->
   </servlet>
+
+  <!-- Servlet Mapping -->
   <servlet-mapping>
-    <servlet-name>dispatcher</servlet-name>
-    <url-pattern>/</url-pattern>
+    <servlet-name>dispatcher</servlet-name> <!-- Name of the DispatcherServlet to map -->
+    <url-pattern>/</url-pattern> <!-- URL pattern to map to the DispatcherServlet -->
   </servlet-mapping>
+
+<!--  <taglib>-->
+<!--    <taglib-uri>https://jakarta.apache.org/taglibs/standard/core</taglib-uri>-->
+<!--    <taglib-location>/WEB-INF/lib/jakarta.servlet.jsp.jstl-api-3.0.0.jar</taglib-location>-->
+<!--  </taglib>-->
 
 </web-app>
