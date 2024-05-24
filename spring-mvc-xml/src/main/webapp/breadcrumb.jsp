@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false"  %>
+
 <html>
 <head>
     <title>Spring MVC XML</title>
@@ -13,6 +15,12 @@
             display: flex;
             align-items: center;
         }
+        .breadcrumb-item a{
+            color: gray;
+        }
+        .breadcrumb-item a:hover, .breadcrumb-item a:focus, .breadcrumb-item a:active{
+             color: mediumblue;
+         }
     </style>
 </head>
 <body>
@@ -21,7 +29,8 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
         <li class="breadcrumb-item"><a href="/practice">Practice</a></li>
-        <li class="breadcrumb-item"><a href="/signup">Signup</a></li>
+        <li class="breadcrumb-item"><a href="/user/new">Register</a></li>
+        <li class="breadcrumb-item"><a href="/user/showCookie">Show Cookie</a></li>
     </ol>
 </nav>
 
@@ -29,7 +38,7 @@
 <nav aria-label="breadcrumb" class="my-2" id="breadcrumb-practice" style="display: none;">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><a href="/practice">Practice</a></li>
+        <li class="breadcrumb-item"><a class="active" href="/practice">Practice</a></li>
     </ol>
 </nav>
 
@@ -37,7 +46,16 @@
 <nav aria-label="breadcrumb" class="my-2" id="breadcrumb-signup" style="display: none;">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><a href="/signup">Signup</a></li>
+<%--        <li class="breadcrumb-item"><a href="/user/register">Register</a></li>--%>
+        <li class="breadcrumb-item"><a class="active"  href="/user/new">Register</a></li>
+    </ol>
+</nav>
+
+<!-- Breadcrumb navigation for cookie page -->
+<nav aria-label="breadcrumb" class="my-2" id="breadcrumb-cookie" style="display: none;">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a class="active"  href="/user/showCookie">Show Cookie</a></li>
     </ol>
 </nav>
 
@@ -50,8 +68,10 @@
         document.getElementById("breadcrumb-home").style.display = "block";
     } else if (currentPageUrl === "/practice") {
         document.getElementById("breadcrumb-practice").style.display = "block";
-    } else if (currentPageUrl === "/signup") {
+    } else if (currentPageUrl === "/user/new") {
         document.getElementById("breadcrumb-signup").style.display = "block";
+    } else if (currentPageUrl === '/user/showCookie'){
+        document.getElementById("breadcrumb-cookie").style.display = "block";
     }
 
     // Set the breadcrumb divider based on the current page

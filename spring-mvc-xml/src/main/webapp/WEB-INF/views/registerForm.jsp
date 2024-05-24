@@ -19,28 +19,33 @@
         <!-- signup content goes here -->
         <h1 class="text-center text-success mt-5">Spring MVC with XML Configuration</h1>
 <%--    passing data from view to controller--%>
-        <form class="form-control border-light w-50 mx-auto p-5">
-            <h2 class="h2 text-center text-capitalize"><strong>Sign up</strong></h2>
+        <form action="${pageContext.request.contextPath}/user/processform" method="post" class="form-control border-light w-50 mx-auto p-5">
+            <h2 class="h2 text-center text-capitalize"><strong>Registration form</strong></h2>
+            <div class="my-3">
+                <label for="id" class="form-label">User ID</label>
+                <input name="id" type="number" class="form-control border-secondary-subtle" id="id" value=${user.id} readonly>
+            </div>
             <div class="my-3">
                 <label for="fullName" class="form-label">Full name</label>
-                <input type="password" class="form-control border-secondary-subtle" id="fullName">
+                <input name="fullName" type="text" class="form-control border-secondary-subtle" id="fullName" value="${user.fullName}">
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control border-secondary-subtle" id="email" aria-describedby="emailHelp">
+                <input name="email" type="email" class="form-control border-secondary-subtle" id="email" value="${user.email}">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control border-secondary-subtle" id="password">
+                <input name="password" type="password" class="form-control border-secondary-subtle" value="${user.password}" id="password">
             </div>
-            <div class="mb-3">
-                <label for="confirmPassword" class="form-label">Confirm Password</label>
-                <input type="password" class="form-control border-secondary-subtle" id="confirmPassword">
-            </div>
+<%--            <div class="mb-3">--%>
+<%--                <label for="confirmPassword" class="form-label">Confirm Password</label>--%>
+<%--                <input type="password" class="form-control border-secondary-subtle" id="confirmPassword">--%>
+<%--            </div>--%>
 
             <button type="submit" class="btn btn-secondary">Submit</button>
         </form>
     </div>
+
     <%--    jQuery cdn 3.x--%>
     <script
             src="https://code.jquery.com/jquery-3.7.1.min.js"
