@@ -13,7 +13,10 @@ spring-mvc-xml
 │         │     └── com
 │         │         └── example
 │         │             ├── controller
-│         │             │     └── HomeController.java   # Controller class handling HTTP requests
+│         │             │     ├── FormController.java       # Controller for form
+│         │             │     ├── HomeController.java       # Home controller
+│         │             │     ├── PracticeController.java   # Practice controller
+│         │             │     └── UserController.java       # User Controller
 │         │             ├── model
 │         │             │     └── User.java             # Entity class representing a user
 │         │             ├── repository
@@ -32,9 +35,11 @@ spring-mvc-xml
 │             │     │     ├── jakarta.servlet.jsp.jstl-api-3.0.0         # JSTL API for JSP support
 │             │     │     └── jakarta.servlet.jsp.jstl-api-3.0.0.jar     # JSTL API jar file
 │             │     ├── views
-│             │     │     ├── practice.jsp              # JSP view for practice page
-│             │     │     ├── signup.jsp                # JSP view for signup page
-│             │     │     └── spinner.jsp               # JSP view for loading spinner
+│             │     │     ├── practice.jsp
+│             │     │     ├── registerForm.jsp
+│             │     │     ├── setCookie.jsp
+│             │     │     ├── showCookie.jsp
+│             │     │     └── success.jsp
 │             │     └── web.xml                         # Deployment descriptor for the web application
 │             ├── breadcrumb.jsp       # JSP fragment for breadcrumb navigation
 │             └── index.jsp            # Main JSP view for the index page
