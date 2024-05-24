@@ -177,7 +177,7 @@ another build tool like Gradle, the dependencies will be similar, but the syntax
 4. **JSP View**:
 
    ```html
-   <!-- src/main/webapp/WEB-INF/views/signup.jsp -->
+   <!-- src/main/webapp/WEB-INF/views/registerForm.jsp -->
    <!DOCTYPE html>
    <html>
      <head>
