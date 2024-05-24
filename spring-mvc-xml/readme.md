@@ -46,10 +46,6 @@ spring-mvc-xml
     └── spring-mvc-xml.war          # Deployable WAR file
 ```
 
-To create a Spring MVC application (not using Spring Boot), you need to manually manage dependencies in your project.
-Here is a list of the essential dependencies and how you can include them in your project using Maven. If you're using
-another build tool like Gradle, the dependencies will be similar, but the syntax will differ.
-
 ### Maven Dependencies for Spring MVC Application
 
 - **Spring Core (`spring-core`, `spring-context`)**: These are the core components of the Spring framework providing the
@@ -63,6 +59,11 @@ another build tool like Gradle, the dependencies will be similar, but the syntax
 - **Hibernate (`hibernate-core`)**: Required if using Hibernate as the ORM tool.
 - **JDBC (`spring-jdbc`)**: Provides support for JDBC operations in Spring.
 - **Logging (`slf4j-api`, `logback-classic`)**: Provides logging capabilities.
+
+
+### Screenshots
+<img src="home.png" alt="Home Screenshot" style="width: 700px; height: auto;">
+<img src="form.png" alt="Form Screenshot" style="width: 700px; height: auto;">
 
 ### Setting Up the Application
 
