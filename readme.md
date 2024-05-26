@@ -32,7 +32,7 @@ This configuration approach utilizes XML files to configure Spring MVC component
 - demonstrated various ways of fetching data from views:
   - Servlet API: Directly use HttpServletRequest and HttpSession.
   - `@RequestParam`: Extract individual query or form parameters.
-  - Command/Model Object: Bind all form fields to a JavaBean.
+  - Command/Model: Object: Bind all form fields to a JavaBean.
   - `@PathVariable`: Extract values from the URL path.
   - `@ModelAttribute`: Bind method parameters or return values to model attributes.
   - `@CookieValue`: Extract data from cookies.
@@ -43,9 +43,9 @@ This configuration approach utilizes XML files to configure Spring MVC component
 
 #### In this project I practiced
 
--
--
--
+- Spring MVC using Java configuration.
+- More complex form handling and persisting data using Hibernate and MySQL.
+- Using Thymeleaf, Hibernate, Lombok, etc.
 
 ### See note on
 
