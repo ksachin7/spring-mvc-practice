@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Successful</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+<div class="success-container">
+    <h1 th:text="'Your registration has been successful, ' + ${user.username} + '!'"></h1>
+    <div th:object="${user}" class="userData">
+        <p><strong>Email:</strong> <span th:text="${user.email}"></span></p>
+        <p><strong>Gender:</strong> <span th:text="${user.gender}"></span></p>
+        <p><strong>Age:</strong> <span th:text="${user.age}"></span></p>
+        <p><strong>Profession:</strong> <span th:text="${user.profession}"></span></p>
+        <p><strong>Role:</strong> <span th:text="${user.role}"></span></p>
+        <p><strong>Marital status:</strong> <span th:text="${user.married}"></span></p>
+        <p>
+            <strong>Address:</strong>
+            <span th:text="${user.address.addressLine1}"></span>,
+            <span th:text="${user.address.addressLine2}"></span>,
+            <span th:text="${user.address.city}"></span>,
+            <span th:text="${user.address.state}"></span>,
+            <span th:text="${user.address.zipCode}"></span>
+        </p>
+    </div>
+</div>
+</body>
+</html>

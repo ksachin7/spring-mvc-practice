@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Address</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+<!-- address.html -->
+<div th:fragment="addressFields">
+    <div class="form-group row">
+        <div class="col-sm-6">
+            <label class="col-form-label" for="addressLine1">Address Line 1:</label>
+            <input type="text" th:rows="3" id="addressLine1" placeholder="street address" th:field="*{address.addressLine1}" class="form-control"/>
+        </div>
+        <div class="col-sm-6">
+            <label class="col-form-label" for="addressLine2">Address Line 2:</label>
+            <input type="text" th:rowspan="3" id="addressLine2" placeholder="additional address information such as an apartment or suite number, building name, floor number, P.O. Box number, or any other relevant details" th:field="*{address.addressLine2}" class="form-control"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-6">
+            <label class="col-form-label" for="city">City:</label>
+            <input type="text" id="city" placeholder="current city" th:field="*{address.city}" class="form-control"/>
+        </div>
+        <div class="col-sm-6">
+            <label class="col-form-label" for="state">State:</label>
+            <input type="text" id="state" placeholder="current state" th:field="*{address.state}" class="form-control"/>
+        </div>
+        <div class="col-sm-6">
+            <label class="col-form-label" for="zipCode">Zip Code:</label>
+            <input type="text" id="zipCode" placeholder="zip code" th:field="*{address.zipCode}" class="form-control"/>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

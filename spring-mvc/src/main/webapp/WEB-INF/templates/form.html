@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration</title>
+    <link rel="stylesheet" href="/static/styles.css"/>
+</head>
+<body>
+<div class="container">
+    <h1>User Registration Form</h1>
+    <form th:action="@{/register}" th:object="${user}" method="post" class="registration-form" onsubmit="handleSubmit(event)">
+        <div class="form-group row">
+            <div class="col-sm-6">
+                <label for="username">Username:</label>
+                <input type="text" id="username" placeholder="full name" th:field="*{username}" class="form-control"/>
+            </div>
+            <div class="col-sm-6">
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="alphanumeric with special char."
+                       th:field="*{password}" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-6">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="abc@email.com" th:field="*{email}" class="form-control"/>
+            </div>
+            <div class="col-sm-6">
+                <label for="age">Age:</label>
+                <input type="text" id="age" th:field="*{age}" placeholder="number" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-6">
+                <label>Gender:</label>
+                <label>
+                    <input type="radio" th:field="*{gender}" value="Male"/> Male
+                </label>
+                <label>
+                    <input type="radio" th:field="*{gender}" value="Female"/> Female
+                </label>
+            </div>
+            <div class="col-sm-6">
+                <label for="married">Married:</label>
+                <input type="checkbox" id="married" th:field="*{married}"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-6">
+                <label for="role">Role:</label>
+                <select id="role" th:field="*{role}" class="form-control">
+                    <option value="USER">User</option>
+                    <option value="ADMIN">Admin</option>
+                </select>
+            </div>
+            <div class="col-sm-6">
+                <label for="profession">Profession:</label>
+                <select id="profession" th:field="*{profession}" class="form-control">
+                    <option value=""  selected>Select your profession</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Architect">Architect</option>
+                    <option value="Developer">Developer</option>
+                    <option value="Tester">Tester</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <!-- Include address template -->
+            <label>Current Address:</label>
+            <div th:replace="address :: addressFields"></div>
+        </div>
+        <div id="success-message" class="success-message" style="display: none;">
+            <h3>Registration successful!</h3>
+<!--            <p>Redirecting to the success page...</p>-->
+        </div>
+        <div class="form-group">
+            <button id="submit-button" type="submit" class="btn btn-primary">Register</button>
+        </div>
+    </form>
+</div>
+<script>
+    function handleSubmit(event) {
+        event.preventDefault(); // Prevent the default form submission
+        const button = document.getElementById("submit-button");
+        button.disabled = true;
+        button.innerText = "Submitting...";
+
+        // Show success message
+        document.getElementById("success-message").style.display = "block";
+
+        // Wait for 5 seconds before redirecting
+        setTimeout(function() {
+            // Manually submit the form
+            event.target.submit();
+        }, 5000);
+    }
+</script>
+</body>
+</html>
