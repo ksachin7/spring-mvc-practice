@@ -45,7 +45,8 @@ This configuration approach utilizes XML files to configure Spring MVC component
 
 - Spring MVC using Java configuration.
 - More complex form handling and persisting data using Hibernate and MySQL.
-- Using Thymeleaf, Hibernate, Lombok, etc.
+- Practiced Thymeleaf, Hibernate, Lombok, etc.
+- Practiced form validation.
 
 ### See note on
 
